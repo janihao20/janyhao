@@ -1,0 +1,847 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* ---------------------------- */
+/* GLOBAL TRANSITIONS & EFFECTS */
+/* ---------------------------- */
+* {
+  transition: all 0.3s ease-in-out;
+}
+
+/* ---------- NAVIGATION ---------- */
+nav a {
+  position: relative;
+  text-decoration: none;
+  color: #444;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 8px 16px;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #0b1d4a;
+  left: 0;
+  bottom: -4px;
+  transition: width 0.3s ease;
+}
+
+nav a:hover {
+  color: #0b1d4a;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+
+/* ---------- LOGO ---------- */
+header .logo {
+  font-weight: 600;
+  color: #0b1d4a;
+  transition: transform 0.3s ease;
+}
+
+header .logo:hover {
+  transform: scale(1.05);
+}
+
+header .logo a {
+    text-decoration: none;
+    color: #0b1d4a;
+}
+
+/* ---------- PROFILE IMAGE ---------- */
+.profile-image img {
+  border-radius: 8px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.profile-image img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* ---------- SOCIAL ICONS ---------- */
+.social-icons a img {
+  width: 32px;
+  height: 31px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.social-icons a img:hover {
+  transform: scale(1.15);
+  opacity: 0.9;
+}
+
+/* ---------- INTRODUCTION ---------- */
+.introduction h2:hover {
+  color: #0b1d4a;
+  letter-spacing: 1px;
+}
+
+/* ---------- ACHIEVEMENT CARDS ---------- */
+.achievement-box {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.achievement-box:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+/* ---------- HOBBY CARDS ---------- */
+.hobby-box {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.hobby-box:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+/* ---------- CONTACT FORM ---------- */
+.contact-form input,
+.contact-form textarea {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #0b1d4a;
+  box-shadow: 0 0 6px rgba(11, 29, 74, 0.3);
+}
+
+/* ---------- CONTACT BUTTON ---------- */
+.contact-form button {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #142f7a;
+  transform: scale(1.05);
+}
+
+/* ---------- SCROLL ANIMATION ---------- */
+section {
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+section.hidden {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+
+body {
+    background-color: #f4f4f8;
+    padding-top: 60px; /* Adjust if header height changes */
+}
+
+/* Header */
+header {
+    position: fixed;          /* Keep it visible when scrolling */
+    top: 0;                   /* Stick it to the top of the page */
+    left: 0;
+    width: 100%;              /* Full width */
+    z-index: 1000;            /* Make sure it stays on top of all elements */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+header .logo {
+    color: #1a1a1a;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #444;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #003366;
+}
+
+/* Profile Section */
+.profile {
+    background: url('images/bg2.png') no-repeat center center/cover;
+    padding: 80px 0 60px;
+    text-align: center;
+}
+
+.profile-container {
+    display: flex;
+    background: white;
+    width: 70%;
+    max-width: 1000px;
+    margin: 0 auto;
+    box-shadow: 0 6px 10px rgba(0,0,0,0.1);
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-image {
+    flex: 1;
+}
+
+.profile-info {
+    flex: 1;
+    padding: 40px;
+    color: #333;
+    text-align: left;
+}
+
+.profile-info h2 {
+    color: #1a1a1a;
+    margin-bottom: 5px;
+}
+
+.profile-info h4 {
+    color: #555;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.profile-info p {
+    font-size: 14px;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.profile-info strong {
+    color: #1a1a1a;
+}
+
+/* Social Bar */
+.social-bar {
+    background-color: #0b1d4a;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-bar a img {
+    width: 18px;
+    height: 18px;
+    filter: invert(1);
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.social-bar a img:hover {
+    opacity: 1;
+}
+
+/* Introduction */
+.introduction {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #f4f4f8;
+    color: #333;
+}
+
+.introduction h2 {
+    font-size: 20px;
+    color: #0b1d4a;
+    margin-bottom: 15px;
+}
+
+.introduction p {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #444;
+}
+
+/* Education Section */
+.education {
+    background-color: #fff;
+    padding: 80px 10%;
+    text-align: center;
+    border-top: 1px solid #eee;
+}
+
+.education h2 {
+    letter-spacing: 2px;
+    font-size: 14px;
+    color: #0b1d4a;
+    margin-bottom: 60px;
+}
+
+.education-item {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 50px;
+    text-align: left;
+}
+
+.year-degree {
+    width: 200px;
+    text-align: right;
+}
+
+.year-degree p {
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: #666;
+    margin-bottom: 6px;
+}
+
+.year-degree h4 {
+    font-size: 13px;
+    font-weight: 600;
+    color: #111;
+}
+
+.edu-details {
+    width: 500px;
+    border-left: 1px solid #ddd;
+    padding-left: 40px;
+}
+
+.edu-details h5 {
+    font-size: 13px;
+    color: #0b1d4a;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.edu-details p {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .education-item {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .year-degree {
+        text-align: center;
+        width: auto;
+    }
+
+    .edu-details {
+        border-left: none;
+        padding-left: 0;
+        width: 100%;
+    }
+}
+
+/* Skills Section */
+.skills {
+    background-color: #0b1d4a;
+    color: white;
+    text-align: center;
+    padding: 80px 10%;
+}
+
+.skills h2 {
+    letter-spacing: 2px;
+    font-size: 14px;
+    color: white;
+    margin-bottom: 60px;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.skills-box {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 15px 20px;
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+}
+
+.skills-box p {
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+}
+
+/* Expertise Section */
+.expertise {
+    background-color: #fff;
+    text-align: center;
+    padding: 80px 10%;
+}
+
+.expertise h2 {
+    letter-spacing: 2px;
+    font-size: 14px;
+    color: #0b1d4a;
+    margin-bottom: 60px;
+}
+
+.expertise-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    justify-items: center;
+}
+
+.expertise-box {
+    text-align: left;
+    max-width: 350px;
+}
+
+.expertise-box h4 {
+    font-size: 12px;
+    font-weight: 700;
+    color: #0b1d4a;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.expertise-box p {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.6;
+}
+
+html {
+    font-size: 17px; /* Default is 16px; this enlarges all text proportionally */
+    scroll-behavior: smooth;
+}
+
+/* Achievements Section */
+.achievements {
+    background-color: #fff;
+    padding: 80px 10%;
+    text-align: center;
+    border-top: 1px solid #eee;
+}
+
+.achievements h2 {
+    letter-spacing: 2px;
+    font-size: 14px;
+    color: #0b1d4a;
+    margin-bottom: 60px;
+}
+
+/* Container for the achievement cards */
+.achievements-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+/* Each achievement card */
+.achievement-box {
+    display: flex;
+    align-items: center;
+    background-color: #0b1d4a;
+    color: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    width: 45%;
+    min-width: 400px;
+    max-width: 500px;
+    text-align: left;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Image style */
+.achievement-box img {
+    width: 180px;
+    height: 140px;
+    object-fit: cover;
+}
+
+/* Text inside each box */
+.achievement-info {
+    padding: 15px 20px;
+}
+
+.achievement-info h4 {
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.achievement-info p {
+    font-size: 13px;
+    color: #ddd;
+    line-height: 1.6;
+}
+
+/* Responsive layout */
+@media (max-width: 900px) {
+    .achievement-box {
+        width: 90%;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .achievement-box img {
+        width: 100%;
+        height: 180px;
+    }
+
+    .achievement-info {
+        padding: 20px;
+    }
+}
+
+.achievement-box {
+    display: flex;
+    align-items: center;
+    background-color: #0b1d4a;
+    color: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    width: 45%;
+    min-width: 400px;
+    max-width: 500px;
+    text-align: left;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover lift effect (card only, not image) */
+.achievement-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+/* Keep the image still */
+.achievement-box img {
+    width: 200x;
+    height: 200px;
+    object-fit: cover;
+    transition: none; /* disable animation */
+}
+
+/* Hobbies Section */
+.hobbies {
+    background-color: #0b1d4a; /* dark bluish-gray background */
+    padding: 80px 10%;
+    text-align: center;
+    border-top: 1px solid #eee;
+}
+
+.hobbies h2 {
+    letter-spacing: 2px;
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 60px;
+}
+
+/* Container for the hobby cards */
+.hobbies-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+/* Each hobby card */
+.hobby-box {
+    background-color: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    width: 45%;
+    min-width: 300px;
+    max-width: 400px;
+    text-align: left;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hobby-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.hobby-box img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    transition: none; /* disable animation */
+}
+
+.hobby-info {
+    padding: 20px;
+}
+
+.hobby-info h4 {
+    font-size: 13px;
+    font-weight: 700;
+    color: #0b1d4a;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.hobby-info p {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Responsive layout */
+@media (max-width: 900px) {
+    .hobby-box {
+        width: 90%;
+    }
+}
+
+/* Contact Section */
+.contact {
+    background-color: #f4f4f8;
+    padding: 80px 10%;
+    text-align: center;
+    border-top: 1px solid #eee;
+}
+
+.contact h2 {
+    letter-spacing: 2px;
+    font-size: 14px;
+    color: #0b1d4a;
+    margin-bottom: 60px;
+}
+
+/* Contact Layout */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+/* Left Form */
+.contact-form {
+    flex: 1;
+    min-width: 320px;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form label {
+    font-size: 13px;
+    color: #333;
+    text-align: left;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #0b1d4a;
+    border-radius: 3px;
+    font-size: 13px;
+}
+
+.contact-form button {
+    background-color: #0b1d4a;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #142f7a;
+}
+
+/* Right Info Panel */
+.contact-info {
+    flex: 1;
+    min-width: 280px;
+    max-width: 400px;
+    text-align: left;
+}
+
+.contact-info h3 {
+    font-size: 18px;
+    color: #0b1d4a;
+    margin-bottom: 5px;
+}
+
+.contact-info p {
+    font-size: 13px;
+    color: #333;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.contact-info hr {
+    margin: 20px 0;
+    border: none;
+    border-top: 1px solid #ccc;
+}
+
+/* Social Icons */
+.contact-socials {
+    display: flex;
+    gap: 15px;
+}
+
+.contact-socials a img {
+    width: 18px;
+    height: 18px;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.contact-socials a img:hover {
+    opacity: 1;
+}
+
+/* Responsive layout */
+@media (max-width: 900px) {
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .contact-info {
+        text-align: center;
+    }
+}
+
+.social-icons a {
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+/* ...existing code... */
+
+/* Contact Form Styling */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.form-group textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.contact-form button {
+    background-color: #0b1d4a;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #142f7a;
+    transform: scale(1.05);
+}
+
+.contact-form h2 {
+    color: #0b1d4a;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+/* ...existing code... */
+
+.contact-form label {
+    display: block;
+    text-align: left;
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 14px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #0b1d4a;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.contact-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #0b1d4a;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #142f7a;
+}
